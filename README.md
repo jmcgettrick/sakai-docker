@@ -1,11 +1,8 @@
 # sakai-docker
 
-Docker container for the stable version of [Sakai v12](https://github.com/sakaiproject/sakai).
+Docker container for the stable version of [Sakai v19](https://github.com/sakaiproject/sakai).
 
-This project exists to help with testing of the [Hypothesis
-LMS](https://github.com/hypothesis/lms) integration in Sakai.
-
-Installation requires [Docker Compose](https://docs.docker.com/compose/).
+This is forked from [hypothesis/sakai-docker](https://github.com/hypothesis/sakai-docker).
 
 ## Setup
 
@@ -33,25 +30,31 @@ you can access Sakai by browsing to http://localhost:8080/portal.
 
 The default admin user is `admin` and the password is `admin`.
 
-## Installing the Hypothesis LTI tool
+## Installing an LTI Tool
 
 To test an LTI tool, you will need to:
 
 1. Create a new "project site".
    - Click "Worksite Setup" in the left navbar
+   - Click the "Create new site" tab
    - Select "Build your own site" => "project site"
    - Click "Continue".
 2. Enter a title for the site and click "Continue".
-3. On the "Project Site Tools" page, check the "External Tool" option and click
+3. On the "Site Tools" page, check the "External Tool" option and click
    Continue.
-4. Click "Continue" on the Project Site Access page
-5. Click "Create Site" on the confirmation page.
+4. Click "Continue" on the Customize tool instances page
+5. Click "Continue" on the Project Site Access page
+6. Click "Create Site" on the confirmation page.
 6. Select the new site in the list of sites. It should be displayed as active
    in the tabs at the top.
 7. Click the "External Tool" link in the left navbar and then click "Edit"
    to configure it.
-8. Register a new LMS application instance at https://hypothes.is/welcome
-   and enter the launch URL, and consumer key and secret in Sakai.
+8. Enter the "Remote Tool URL", and "Remote Tool Key" and "Remote Tool Secret". 
+   Check "Send Email Addresses to the External Tool" and "Send Names to the External Tool" 
+   then click "Update Options".
+
+Note that you can check "Debug Launch" which will give you the option to see the launch data 
+before launching the tool.
 
 ## Troubleshooting
 
